@@ -1,7 +1,22 @@
 import 'package:flutter/material.dart';
+import './pages/landing.dart';
+import './pages/home.dart';
+import './pages/test.dart';
 
-void main() => runApp(new MyApp());
+import 'globals.dart' as globals;
 
+
+void main() {
+  globals.endpoint = 'http://20f69a24.ngrok.io';
+  globals.login = '/login';
+  globals.register = '/register';
+
+  runApp(new MaterialApp(
+      home: new Landing()
+    )
+  );
+}
+/*
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -17,7 +32,7 @@ class MyApp extends StatelessWidget {
         // "hot reload" (press "r" in the console where you ran "flutter run",
         // or press Run > Flutter Hot Reload in IntelliJ). Notice that the
         // counter didn't reset back to zero; the application is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.amber,
       ),
       home: new MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -65,6 +80,20 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return new Scaffold(
+      bottomNavigationBar: new BottomNavigationBar(
+        items: <BottomNavigationBarItem>[
+          new BottomNavigationBarItem(
+            icon: new Icon(Icons.search),
+            title: new Text("Search")
+          ),
+          new BottomNavigationBarItem(
+            
+            icon: new Icon(Icons.home),
+            title: new Text("Something1")
+          )
+        ],
+        fixedColor: Colors.blue,
+      ),
       appBar: new AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
@@ -96,6 +125,12 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.display1,
             ),
+            new RaisedButton(
+              onPressed: _incrementCounter,
+              child: new Text(
+                'Hello world',
+              ),
+            ),
           ],
         ),
       ),
@@ -107,3 +142,5 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+*/

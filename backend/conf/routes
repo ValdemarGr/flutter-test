@@ -1,0 +1,8 @@
+
+
+
+GET     /succeed    controllers.TestController.succeed
+GET     /fail       controllers.TestController.fail
+
+POST    /login      controllers.TestController.login
+POST    /register      controllers.TestController.register
